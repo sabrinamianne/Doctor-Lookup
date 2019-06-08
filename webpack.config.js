@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: './src/index.js',
@@ -11,34 +12,48 @@ module.exports = {
   },
   devtool: 'eval-source-map',
   devServer: {
-  contentBase: './dist'
- },
+    contentBase: './dist'
+  },
   plugins: [
-    new UglifyJsPlugin({ sourceMap: true }),
+    new UglifyJsPlugin({
+      sourceMap: true
+    }),
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'doctor-lookup',
+      title: '',
       template: './src/index.html',
       inject: 'body'
-    })
+    }),
+    new Dotenv()
   ],
   module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
-      },
-      {
-        test: /\.js$/,
-        exclude: [
-          /node_modules/,
-          /spec/
-        ],
-        loader: "eslint-loader"
-      }
+    rules: [{
+      test: /\.css$/,
+      use: [
+        'style-loader',
+        'css-loader'
+      ]
+    },
+
+    {
+      test: /\.js$/,
+      exclude: [
+        /node_modules/,
+        /spec/
+      ],
+      loader: "eslint-loader"
+    },
+    {
+      test: /\.html$/,
+      use: [ "html-loader" ],
+    },
+    {
+      test: /\.(gif|png|jpe?g|svg)$/i,
+      use: [
+        'file-loader',
+      ],
+
+    }
     ]
   }
 };

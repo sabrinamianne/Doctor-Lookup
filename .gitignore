@@ -1,3 +1,4 @@
 dist/
 .DS-Store
 node_modules/
+.env
