@@ -6,20 +6,21 @@
     <title>Doctor Lookup</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container" id="page-container">
       <div class="jumbotron" style="background-color:#657ca3; text-align: center;font-family:"Arial", Helvetica, sans-serif;">
         <h1>Seattle Doctors</h1>
       </div>
     </div>
-    <div class="container">
+    <div class="container" id="content-wrap">
       <form id="form">
-        <label for="issue">Symptom</label>
-        <input id="medicalIssue" type="text" name="issue"><br>
-        <label for="doctorName">Doctor's Name</label>
-        <input id="name" type="text" name="doctorName" placeholder="Name"><br>
-        <button type="submit" class="btn btn-danger">Find me a doctor!</button>
+        <h2>Find a Doctor in Seattle and surroundings.</h2><br>
+        <label for="issue">Indicate one of your main symptoms: </label>
+        <input id="medicalIssue" type="text" name="issue" placeholder="Symptom"><br>
+        <label for="issue">Indicate if you know the name of the doctor to get his informations: </label>
+        <input id="name" type="text" name="doctorName" placeholder="Doctor's Name"><br><br>
+        <button type="submit" class="btn btn-danger">Find me a doctor!</button><br><br>
       </form>
       <div class="showDoctors"></div>
-    </div>
+      </div>
   </body>
 </html>

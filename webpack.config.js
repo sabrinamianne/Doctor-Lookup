@@ -4,6 +4,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
+
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -24,7 +25,7 @@ module.exports = {
       template: './src/index.html',
       inject: 'body'
     }),
-    new Dotenv()
+    new Dotenv(),
   ],
   module: {
     rules: [{
@@ -52,8 +53,7 @@ module.exports = {
       use: [
         'file-loader',
       ],
-
-    }
+    },
     ]
   }
 };
