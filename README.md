@@ -24,10 +24,10 @@ $ npm install
 # Run the app
 $ npm start
 
-# Enter your Api Key
+# Setup Instruction for your Api Key
 $ Create your Api Key on https://developer.betterdoctor.com/
-$ Place your token in an .env file at the top level of your directory
-$ Name your API key variable exports.apiKey
+$ Create an .env file at the top level of your directory 
+$ Name your API key variable exports.apiKey in your .env fil ==> ex : exports.apiKey = YourAPIKey
 ```
 
 Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
