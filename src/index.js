@@ -20,6 +20,7 @@ $(document).ready(function() {
     promise.then(function(response) {
 
       let body= JSON.parse(response);
+
       let acceptNewClients = function (i) {
         if (body.data[i].practices[0].accepts_new_patients === true)
         {
